@@ -1,0 +1,93 @@
+/* base*/
+
+.logo{
+    border-style: solid;
+    border-width: 2px;
+    padding: 4px;
+    font-weight: bold;
+    display: inline-block;
+}
+.container{
+    width: 70%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    
+}
+
+
+a{
+    color: rgb(0, 0, 0);
+    text-decoration:underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    text-decoration-color: rgb(85, 255, 85);
+}
+
+a:hover{
+    text-decoration-color: black;
+}
+a:hover{
+    color: rgb(85, 255, 85);
+}
+
+p > a,
+p{
+    font-size: 15px;
+    word-wrap: break-word;
+}
+
+button{
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#top{
+    color: rgb(168, 168, 168);
+}
+.replay{
+    margin-left: 2em;
+}
+.comment > p{
+    font-size: 15px;
+}
+
+/* Home view */
+
+.box{
+    padding: 1em;
+    border-style: solid;
+    border-width: 1px;
+}
+.upvote{
+    font-size: 25px;
+}
+.upvote:hover{
+    color: rgb(78, 255, 61);
+}
+.small{
+    font-size: 10px;
+}
+
+
+/* post view */
+
+
+textarea[type="text"]
+{
+    font-size:20px;
+}
+textarea{
+    font-size: 20px;
+    max-width: 35em;
+}
+.child{
+
+    border-left: solid;
+    border-width: 1px;
+    padding-left: 2em;
+}
+
+

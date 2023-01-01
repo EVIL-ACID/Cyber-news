@@ -1,0 +1,25 @@
+{% extends 'forumnews/base.html' %}
+
+{% block content %}
+    {% for post in post_list %}
+    <h5>
+        <div class="box">
+            <a target="_blank" href={{post.post_link}}>{{post.post_title}}</a> <span class="small">({{post.post_link|slice:'8:'}})</span>
+
+            <p> 
+                 {{post.post_points}} points |
+                 by <a href=" {% url 'profile' post.post_author %}">{{post.post_author}}</a> | 
+                 {{ post.post_date|timesince  }} ago | 
+                 <a href="{% url 'post' post.id %}"> discuss</a> | 
+
+                 {% if user.is_authenticated and post.post_author == user%}
+                    <a href="{% url 'post_update' post.id %}">edit</a> |
+                    <a href="{% url 'delete_post' post.id %}">delete</a>
+                 {%endif%}
+            </p>
+        </div>
+
+
+    </h5>
+    {% endfor %}
+{% endblock %}

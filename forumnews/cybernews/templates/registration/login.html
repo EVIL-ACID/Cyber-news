@@ -1,0 +1,17 @@
+{% extends "forumnews/base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h2>Login</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>
+<br>
+
+<h3>
+  <a href={% url 'register' %}>Register</a>
+</h3>
+{% endblock %}

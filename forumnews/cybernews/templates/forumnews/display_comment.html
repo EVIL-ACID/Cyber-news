@@ -1,0 +1,20 @@
+{% extends 'forumnews/base.html' %}
+
+
+{% block content %}
+
+
+    <h5>Replaying to :</h5>
+    <div class="comment">
+        <p id="top"> <a href="/">@{{comment.comment_author}}</a>| {{comment.comment_date|timesince}} ago |</p>
+        <p>{{comment.comment_text|linebreaks }}</p>
+    </div>
+
+    <form method="POST" > {%csrf_token%}
+        <textarea name="comment_text" cols="80" rows="8"></textarea>
+        <p>Comments and Sites Guidlines</p>
+        <button type="submit">Reply</button>
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'forumnews/base.html' %}
+
+
+{% block content %}
+    <h5><a target="_blank" href={{post.post_link}}>{{post.post_title}}</a> <span>({{post.post_link}})</span>
+    
+        <p> 
+           <a href={% url 'upvote' post.id %}>+</a> | {{post.post_points}} points | by {{post.post_author}} | {{ post.post_date|timesince }} ago | <a href="/post/{{post.id}}">{{comment_count}} comments |</a>
+        </p>
+
+
+        <form method="POST" > {%csrf_token%}
+            <textarea name="comment_text" cols="80" rows="8"></textarea>
+            <p>Comments and Sites Guidlines</p>
+            <button type="submit">Add comment</button>
+        </form>
+
+    
+        {% load mptt_tags %}
+            
+        <div class="comment">
+            {% recursetree comments %}
+                    
+                <p id="top"> <a href={% url 'profile' node.comment_author %}>@{{node.comment_author}}</a>| {{node.comment_date|timesince}} ago |</p>
+                <p>{{node.comment_text|linebreaks }}</p>
+                <p>
+                    <a href="{% url 'comment' node.pk %}">reply</a>
+                    {% if user.is_authenticated and node.comment_author == user%}
+                    <a href=" {% url 'update_comment' node.pk %}">edit</a>
+                    <a href="{% url 'delete_comment' node.pk %}">delete</a>
+
+                    {%endif%}
+                </p>
+
+    
+                {% if not node.is_leaf_node %}
+                    <div class="child">
+                        {{children}}
+                    </div>
+                {% endif %}
+            {% endrecursetree %}
+        </div>    
+    </h5>
+{% endblock %}
