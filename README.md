@@ -1,6 +1,11 @@
 # Cyber-news
 Hackernews inspired web app.
 
+
+
+![djnews](https://user-images.githubusercontent.com/120695832/210161088-89572317-9bb2-4b66-819b-8754ce1f0374.gif)
+
+
 # Functions
 
 - [x] Register a user
