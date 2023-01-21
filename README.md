@@ -19,6 +19,3 @@ Hackernews inspired web app.
 - [x] Edit comment
 - [x] Delete comment
 - [x] View profile with user stats
-- [ ] Option to view all post with the same link
-- [ ] Option to order posts by date or upvotes
-- [ ] Convert to using Class Based views (This a porject I'm working on as I learn python and django so I chose function based views to learn more about what's going on with each view) 
